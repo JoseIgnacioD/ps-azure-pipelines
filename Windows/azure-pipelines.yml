@@ -11,8 +11,10 @@ steps:
   displayName: 'Execute inline Powershell Core'
   inputs:
     targetType: 'inline'
-    script: |           
-      Write-Host "Hello JID from Powershell Core"
+    script: |
+      # Write your PowerShell commands here.
+        
+      Write-Host "Hello World"
     pwsh: true
 
 - task: PowerShell@2
