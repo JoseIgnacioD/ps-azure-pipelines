@@ -1,2 +1,23 @@
 trigger:
 - master
+
+pool:
+ name: 'test-windows'
+ demands:
+ - Agent.OS -equals Windows_NT
+
+steps:
+- task: PowerShell@2
+  displayName: 'Execute inline Powershell Core'
+  inputs:
+    targetType: 'inline'
+    script: |           
+      Write-Host "Hello JID from Powershell Core"
+      pwsh: true
+
+- task: PowerShell@2
+  displayName: 'Execute inline Windows Powershell'
+  inputs:
+    targetType: 'inline'
+    script: |           
+      Write-Host "Hello JID from Windows Powershell"
